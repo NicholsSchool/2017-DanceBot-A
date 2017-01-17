@@ -13,6 +13,7 @@ public class OI
     public Joystick joystick1;
     
     public JoystickButton joystick0Button1;
+    public JoystickButton joystick0Button2;
 
     public OI() 
     {
@@ -21,6 +22,9 @@ public class OI
         
         joystick0Button1 = new JoystickButton(joystick0, 1);
         joystick0Button1.whileHeld(new RotateLight());
+        
+        joystick0Button2 = new JoystickButton(joystick0, 2);
+        joystick0Button2.whileHeld(new TankDrive());
         
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Tank Drive", new TankDrive());

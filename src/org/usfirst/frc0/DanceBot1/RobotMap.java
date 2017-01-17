@@ -16,16 +16,16 @@ public class RobotMap
 
     public static void init() 
     {
-        driveTrainLeftFrontMotor = new CANTalon(0);
+        driveTrainLeftFrontMotor = new CANTalon(23);
         LiveWindow.addActuator("Drive Train", "Left Front Motor", driveTrainLeftFrontMotor);
         
-        driveTrainLeftRearMotor = new CANTalon(1);
+        driveTrainLeftRearMotor = new CANTalon(24);
         LiveWindow.addActuator("Drive Train", "Left Rear Motor", driveTrainLeftRearMotor);
         
-        driveTrainRightFrontMotor = new CANTalon(2);
+        driveTrainRightFrontMotor = new CANTalon(21);
         LiveWindow.addActuator("Drive Train", "Right Front Motor", driveTrainRightFrontMotor);
         
-        driveTrainRightRearMotor = new CANTalon(3);
+        driveTrainRightRearMotor = new CANTalon(22);
         LiveWindow.addActuator("Drive Train", "Right Rear Motor", driveTrainRightRearMotor);
         
         driveTrainRobotDrive4 = new RobotDrive(driveTrainLeftFrontMotor, driveTrainLeftRearMotor,
@@ -36,7 +36,7 @@ public class RobotMap
         driveTrainRobotDrive4.setSensitivity(0.5);
         driveTrainRobotDrive4.setMaxOutput(1.0);
 
-        lightRotaterMotor = new CANTalon(4);
+        lightRotaterMotor = new CANTalon(25);
         LiveWindow.addActuator("Light Rotater", "Motor", lightRotaterMotor);
     }
 }

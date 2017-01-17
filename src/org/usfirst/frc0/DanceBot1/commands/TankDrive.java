@@ -8,7 +8,7 @@ public class TankDrive extends Command
 {
     public TankDrive() 
     {
-    	
+    	requires(Robot.driveTrain);
     }
 
     protected void initialize() 
@@ -18,7 +18,7 @@ public class TankDrive extends Command
 
     protected void execute() 
     {
-    	
+    	Robot.driveTrain.move(0.1, 0.1);
     }
 
     protected boolean isFinished() 

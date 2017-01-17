@@ -8,7 +8,7 @@ public class RotateLight extends Command
 {
     public RotateLight() 
     {
-    	
+    	requires(Robot.lightRotater);
     }
 
     protected void initialize() 
@@ -28,11 +28,11 @@ public class RotateLight extends Command
 
     protected void end() 
     {
-    	
+    	Robot.lightRotater.move(0.0);
     }
 
     protected void interrupted() 
     {
-    	
+    	end();
     }
 }

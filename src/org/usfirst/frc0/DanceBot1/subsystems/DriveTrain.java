@@ -25,6 +25,7 @@ public class DriveTrain extends Subsystem
     {
     	setDefaultCommand(new TankDrive());
     }
+    
     public void move(double rightAmount, double leftAmount)
     {
     	//robotDrive4.tankDrive(leftAmount, rightAmount);
@@ -34,6 +35,11 @@ public class DriveTrain extends Subsystem
     	//leftRearMotor.set(leftAmount);
     	//rightFrontMotor.set(rightAmount);
     	//rightFrontMotor.set(rightAmount);
+    }
+    
+    public void disable()
+    {
+    	leftFrontMotor.disable();
     }
 }
 

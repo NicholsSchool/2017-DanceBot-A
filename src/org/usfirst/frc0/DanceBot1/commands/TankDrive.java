@@ -28,11 +28,11 @@ public class TankDrive extends Command
 
     protected void end() 
     {
-    	
+    	Robot.driveTrain.disable();
     }
 
     protected void interrupted() 
     {
-    	
+    	end();
     }
 }

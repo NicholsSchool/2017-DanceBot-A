@@ -13,12 +13,12 @@ public class TankDrive extends Command
 
     protected void initialize() 
     {
-    	
+    	Robot.driveTrain.move(0.0, 0.0);
     }
 
     protected void execute() 
     {
-    	Robot.driveTrain.move(0.1, 0.1);
+    	Robot.driveTrain.move(Robot.oi.getJoystick0Y(), Robot.oi.getJoystick0Y());
     }
 
     protected boolean isFinished() 
@@ -28,7 +28,7 @@ public class TankDrive extends Command
 
     protected void end() 
     {
-    	Robot.driveTrain.disable();
+    	Robot.driveTrain.move(0.0, 0.0);
     }
 
     protected void interrupted() 

@@ -26,20 +26,16 @@ public class DriveTrain extends Subsystem
     	setDefaultCommand(new TankDrive());
     }
     
-    public void move(double rightAmount, double leftAmount)
+    public void move(double leftAmount, double rightAmount)
     {
-    	//robotDrive4.tankDrive(leftAmount, rightAmount);
+    	// right motors are reversed but tankDrive automatically fixes it???
+    	robotDrive4.tankDrive(leftAmount, rightAmount);
     	
     	// use for testing
-    	leftFrontMotor.set(leftAmount);
-    	//leftRearMotor.set(leftAmount);
-    	//rightFrontMotor.set(rightAmount);
-    	//rightFrontMotor.set(rightAmount);
-    }
-    
-    public void disable()
-    {
-    	leftFrontMotor.disable();
+    	/*leftFrontMotor.set(leftAmount);
+    	leftRearMotor.set(leftAmount);
+    	rightFrontMotor.set(rightAmount);
+    	rightRearMotor.set(rightAmount);*/
     }
 }
 

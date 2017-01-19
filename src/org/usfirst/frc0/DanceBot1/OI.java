@@ -20,11 +20,11 @@ public class OI
         joystick0 = new Joystick(0);
         joystick1 = new Joystick(1);
         
-        joystick0Button1 = new JoystickButton(joystick0, 1);
-        joystick0Button1.whileHeld(new RotateLight());
+        //joystick0Button1 = new JoystickButton(joystick0, 1);
+        //joystick0Button1.whileHeld(new RotateLight());
         
-        joystick0Button2 = new JoystickButton(joystick0, 2);
-        joystick0Button2.whileHeld(new TankDrive());
+        //joystick0Button2 = new JoystickButton(joystick0, 2);
+        //joystick0Button2.whenPressed(new TankDrive());
         
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Tank Drive", new TankDrive());
@@ -39,6 +39,17 @@ public class OI
     public Joystick getJoystick1() 
     {
         return joystick1;
+    }
+    
+    public double getJoystick0Y()
+    {
+    	// return is negative b/c the joystick has reversed values
+    	return -joystick0.getY();
+    }
+    
+    public double getJoystick0Z()
+    {
+    	return joystick0.getZ();
     }
 }
 

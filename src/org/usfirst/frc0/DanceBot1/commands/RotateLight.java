@@ -18,10 +18,8 @@ public class RotateLight extends Command
 
     protected void execute()
     {
-    	if(Robot.oi.getJoystick0Z() > 0.1)
-    	{
-    		//Robot.lightRotater.move(0.3);
-    	}
+    		Robot.lightRotater.move(Robot.oi.getJoystick2());
+    	
     }
 
     protected boolean isFinished() 

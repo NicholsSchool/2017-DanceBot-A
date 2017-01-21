@@ -32,10 +32,10 @@ public class DriveTrain extends Subsystem
     	robotDrive4.tankDrive(leftAmount, rightAmount);
     	
     	// use for testing
-    	/*leftFrontMotor.set(leftAmount);
-    	leftRearMotor.set(leftAmount);
-    	rightFrontMotor.set(rightAmount);
-    	rightRearMotor.set(rightAmount);*/
+    	//leftFrontMotor.set(leftAmount);
+    	//leftRearMotor.set(leftAmount);
+    	//rightFrontMotor.set(rightAmount);
+    	//rightRearMotor.set(rightAmount);
     }
 }
 

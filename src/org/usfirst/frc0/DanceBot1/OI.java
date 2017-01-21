@@ -11,6 +11,7 @@ public class OI
 {
     public Joystick joystick0;
     public Joystick joystick1;
+    public Joystick joystick2;
     
     public JoystickButton joystick0Button1;
     public JoystickButton joystick0Button2;
@@ -19,6 +20,7 @@ public class OI
     {
         joystick0 = new Joystick(0);
         joystick1 = new Joystick(1);
+        joystick2 = new Joystick(2);
         
         //joystick0Button1 = new JoystickButton(joystick0, 1);
         //joystick0Button1.whileHeld(new RotateLight());
@@ -47,9 +49,18 @@ public class OI
     	return -joystick0.getY();
     }
     
+    public double getJoystick1Y() 
+    {
+    	return -joystick1.getY();
+    }
     public double getJoystick0Z()
     {
     	return joystick0.getZ();
+    }
+    
+    public double getJoystick2()
+    {
+    	return joystick2.getY();
     }
 }
 

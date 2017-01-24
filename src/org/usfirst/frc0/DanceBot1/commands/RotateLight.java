@@ -18,7 +18,7 @@ public class RotateLight extends Command
 
     protected void execute()
     {
-    		Robot.lightRotater.move(Robot.oi.getJoystick2());
+    		Robot.lightRotater.move(Robot.oi.getJoystick0Z());
     	
     }
 

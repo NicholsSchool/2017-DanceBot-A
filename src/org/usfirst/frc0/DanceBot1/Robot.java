@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc0.DanceBot1.commands.*;
 import org.usfirst.frc0.DanceBot1.subsystems.*;
 
@@ -14,6 +16,7 @@ public class Robot extends IterativeRobot {
     public static OI oi;
     public static DriveTrain driveTrain;
     public static LightRotater lightRotater;
+    public static AutoSwitch AutoSwitch;
 
     public void robotInit()
     {
@@ -21,6 +24,8 @@ public class Robot extends IterativeRobot {
         driveTrain = new DriveTrain();
         lightRotater = new LightRotater();
 
+        AutoSwitch = new AutoSwitch();
+        
         oi = new OI();
 
         autonomousCommand = new AutonomousCommand();
@@ -54,6 +59,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic()
     {
         Scheduler.getInstance().run();
+        
+       // SmartDashboard.putNumber("TestPot Value", RobotMap.testPot.get());
+        SmartDashboard.putNumber("Current Dial", Robot.AutoSwitch.getDial());
     }
 
     public void testPeriodic() 

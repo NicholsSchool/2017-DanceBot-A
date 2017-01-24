@@ -28,6 +28,15 @@ public class DriveTrain extends Subsystem
     
     public void move(double leftAmount, double rightAmount)
     {
+    	
+    	//To regulate the speed by the Pot value
+    	/*if(RobotMap.testPot.get() <= 1)
+    	{
+    	leftAmount *= RobotMap.testPot.get();
+    	rightAmount *= RobotMap.testPot.get();
+    	}*/
+    	
+    	
     	// right motors are reversed but tankDrive automatically fixes it???
     	robotDrive4.tankDrive(leftAmount, rightAmount);
     	

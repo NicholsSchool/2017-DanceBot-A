@@ -38,7 +38,7 @@ public class DriveTrain extends Subsystem
     	
     	
     	// right motors are reversed but tankDrive automatically fixes it???
-    	robotDrive4.tankDrive(leftAmount, rightAmount);
+    	robotDrive4.arcadeDrive(leftAmount, rightAmount);
     	
     	// use for testing
     	//leftFrontMotor.set(leftAmount);

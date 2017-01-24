@@ -10,9 +10,10 @@ public class AutoSwitch extends Subsystem {
 	
 	private final double dials = 11;
 	
+	
 	public double getDial() {
 	   
-	   double dialNum = autoSwitch/(autoSwitch/dials);
+	   double dialNum = autoSwitch/(360/dials);
 	   double floor = Math.floor(dialNum);
 	   
 	   if ((dialNum - floor) >= 0.5)
@@ -22,6 +23,10 @@ public class AutoSwitch extends Subsystem {
 	   else if((dialNum - floor) < 0.5)
 	   {
 		   dialNum = floor;
+	   }
+	   
+	   if (dialNum == 0){
+		   dialNum = 11;
 	   }
 	   
 	   return dialNum;

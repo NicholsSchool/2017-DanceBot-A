@@ -6,13 +6,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class AutoSwitch extends Subsystem {
 	
-	private double autoSwitch = RobotMap.switchPot.get();
+	private double autoSwitch;
 	
 	private final double dials = 11;
 	
 	
 	public double getDial() {
-	   
+		
+		autoSwitch = RobotMap.switchPot.get();
+		
 	   double dialNum = autoSwitch/(360/dials);
 	   double floor = Math.floor(dialNum);
 	   

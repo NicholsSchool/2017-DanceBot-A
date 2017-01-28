@@ -6,13 +6,16 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class AutoSwitch extends Subsystem {
 	
-	private double autoSwitch = RobotMap.switchPot.get();
+	private double autoSwitch;
 	
 	private final double dials = 11;
 	
+	
 	public double getDial() {
-	   
-	   double dialNum = autoSwitch/(autoSwitch/dials);
+		
+		autoSwitch = RobotMap.switchPot.get();
+		
+	   double dialNum = autoSwitch/(360/dials);
 	   double floor = Math.floor(dialNum);
 	   
 	   if ((dialNum - floor) >= 0.5)
@@ -22,6 +25,10 @@ public class AutoSwitch extends Subsystem {
 	   else if((dialNum - floor) < 0.5)
 	   {
 		   dialNum = floor;
+	   }
+	   
+	   if (dialNum == 0){
+		   dialNum = 11;
 	   }
 	   
 	   return dialNum;

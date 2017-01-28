@@ -22,7 +22,7 @@ public class OI
         joystick1 = new Joystick(1);
         joystick2 = new Joystick(2);
         
-        //joystick0Button1 = new JoystickButton(joystick0, 1);
+        //joystick0Button1 = new JoystickButton(joystick0, 1);ne
         //joystick0Button1.whileHeld(new RotateLight());
         
         //joystick0Button2 = new JoystickButton(joystick0, 2);
@@ -46,7 +46,12 @@ public class OI
     public double getJoystick0Y()
     {
     	// return is negative b/c the joystick has reversed values
-    	return -joystick0.getY() ;
+    	return -joystick0.getY();
+    }
+    
+    public double getJoystick0X()
+    {
+    	return -joystick0.getX();
     }
     
     public double getJoystick1Y() 

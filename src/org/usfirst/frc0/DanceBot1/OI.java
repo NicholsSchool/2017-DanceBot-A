@@ -14,7 +14,7 @@ public class OI
     public Joystick joystick2;
     
     public JoystickButton joystick0Button1;
-    public JoystickButton joystick0Button2;
+    public JoystickButton joystick0Button7;
 
     public OI() 
     {
@@ -22,11 +22,8 @@ public class OI
         joystick1 = new Joystick(1);
         joystick2 = new Joystick(2);
         
-        //joystick0Button1 = new JoystickButton(joystick0, 1);ne
-        //joystick0Button1.whileHeld(new RotateLight());
-        
-        //joystick0Button2 = new JoystickButton(joystick0, 2);
-        //joystick0Button2.whenPressed(new TankDrive());
+        joystick0Button7 = new JoystickButton(joystick0, 7);
+        joystick0Button7.whenPressed(new RecordTeleop());
         
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Tank Drive", new TankDrive());

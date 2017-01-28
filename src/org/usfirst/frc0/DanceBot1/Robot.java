@@ -17,6 +17,7 @@ public class Robot extends IterativeRobot {
     public static DriveTrain driveTrain;
     public static LightRotater lightRotater;
     public static AutoSwitch AutoSwitch;
+    public static TeleopRecorder teleopRecorder;
 
     public void robotInit()
     {
@@ -25,6 +26,8 @@ public class Robot extends IterativeRobot {
         lightRotater = new LightRotater();
 
         AutoSwitch = new AutoSwitch();
+        
+        teleopRecorder = new TeleopRecorder();
         
         oi = new OI();
 

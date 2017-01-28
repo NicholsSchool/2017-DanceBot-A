@@ -21,7 +21,7 @@ public class TeleopRecorder extends Subsystem
 	
 	long startTime;
 	
-	static final String autoFile = "***insert the path of the file you want to record to here***";
+	static final String autoFile = "/home/lvuser/recordedAuto.csv";
 	
 	public void setup() throws IOException
 	{

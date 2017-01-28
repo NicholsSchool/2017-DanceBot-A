@@ -52,14 +52,17 @@ public class RecordTeleop extends Command
 
     protected void end() 
     {
-    	try
+    	if(Robot.isRecording)
     	{
-			Robot.teleopRecorder.endRecord();
-		} 
-    	catch (IOException e)
-    	{
-			e.printStackTrace();
-		}
+        	try
+        	{
+    			Robot.teleopRecorder.endRecord();
+    		} 
+        	catch (IOException e)
+        	{
+    			e.printStackTrace();
+    		}
+    	}
     }
 
     protected void interrupted() 

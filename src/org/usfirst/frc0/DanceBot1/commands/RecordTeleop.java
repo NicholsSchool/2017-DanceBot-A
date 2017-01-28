@@ -21,7 +21,7 @@ public class RecordTeleop extends Command
     	{
         	try 
         	{
-    			Robot.teleopRecorder.setup();
+    			Robot.teleopRecorder.setupRecorder();
     		} 
         	catch (IOException e) 
         	{
@@ -67,6 +67,7 @@ public class RecordTeleop extends Command
 
     protected void interrupted() 
     {
+    	Robot.isRecording = false;
     	end();
     }
 }

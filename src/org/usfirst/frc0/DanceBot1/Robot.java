@@ -69,6 +69,7 @@ public class Robot extends IterativeRobot {
        // SmartDashboard.putNumber("TestPot Value", RobotMap.testPot.get());
         SmartDashboard.putNumber("Current Dial", Robot.AutoSwitch.getDial());
         SmartDashboard.putBoolean("isRecording", isRecording);
+        SmartDashboard.putBoolean("isPlaying", Robot.teleopRecorder.isPlaying());
     }
 
     public void testPeriodic() 

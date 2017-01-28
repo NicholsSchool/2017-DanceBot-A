@@ -13,8 +13,8 @@ public class OI
     public Joystick joystick1;
     public Joystick joystick2;
     
-    public JoystickButton joystick0Button1;
     public JoystickButton joystick0Button7;
+    public JoystickButton joystick0Button10;
 
     public OI() 
     {
@@ -24,6 +24,9 @@ public class OI
         
         joystick0Button7 = new JoystickButton(joystick0, 7);
         joystick0Button7.whenPressed(new RecordTeleop());
+        
+        joystick0Button10 = new JoystickButton(joystick0, 10);
+        joystick0Button10.whenPressed(new PlayTeleop());
         
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Tank Drive", new TankDrive());

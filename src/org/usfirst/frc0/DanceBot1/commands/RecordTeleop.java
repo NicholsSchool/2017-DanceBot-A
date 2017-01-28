@@ -8,38 +8,51 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class RecordTeleop extends Command
 {
+	public RecordTeleop()
+	{
+		requires(Robot.teleopRecorder);
+	}
+	
     protected void initialize() 
     {
-    	try 
+    	Robot.isRecording = !Robot.isRecording;
+    	
+    	if(Robot.isRecording)
     	{
-			Robot.teleopRecorder.setup();
-		} 
-    	catch (IOException e) 
-    	{
-			e.printStackTrace();
-		}
+        	try 
+        	{
+    			Robot.teleopRecorder.setup();
+    		} 
+        	catch (IOException e) 
+        	{
+    			e.printStackTrace();
+    		}
+    	}
     }
 
     protected void execute() 
     {
-    	try 
+    	if(Robot.isRecording)
     	{
-			Robot.teleopRecorder.record();
-		} 
-    	catch (IOException e) 
-    	{
-			e.printStackTrace();
-		}
+        	try 
+        	{
+    			Robot.teleopRecorder.record();
+    		} 
+        	catch (IOException e) 
+        	{
+    			e.printStackTrace();
+    		}
+    	}
     }
 
     protected boolean isFinished() 
     {
-        return false;
+        return !Robot.isRecording;
     }
 
     protected void end() 
     {
-    	try 
+    	try
     	{
 			Robot.teleopRecorder.endRecord();
 		} 

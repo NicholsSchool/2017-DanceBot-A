@@ -25,7 +25,9 @@ public class TeleopRecorder extends Subsystem
 	
 	long startTime;
 	
-	static final String autoFile = "/home/lvuser/recordedAuto.csv";
+	static final int autoNum = 1;
+	
+	public static final String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
 	
 	public void setupRecorder() throws IOException
 	{

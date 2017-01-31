@@ -26,7 +26,9 @@ public class AutoPlayer extends Subsystem
 	
 	long startTime;
 	
-	static final String autoFile = "/home/lvuser/recordedAuto.csv";
+	static final int autoNum = TeleopRecorder.autoNum;
+	
+	public static final String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
     
 	public void setupPlayback() throws FileNotFoundException
 	{

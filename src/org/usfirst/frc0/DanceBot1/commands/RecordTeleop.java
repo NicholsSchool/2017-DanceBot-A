@@ -15,34 +15,28 @@ public class RecordTeleop extends Command
 	
     protected void initialize() 
     {
-    	Robot.isRecording = !Robot.isRecording;
+    	Robot.isRecording = true;
     	
-    	if(Robot.isRecording)
-    	{
-        	try 
-        	{
-    			Robot.teleopRecorder.setupRecorder();
-    		} 
-        	catch (IOException e) 
-        	{
-    			e.printStackTrace();
-    		}
-    	}
+        try 
+        {
+    		Robot.teleopRecorder.setupRecorder();
+   		} 
+       	catch (IOException e) 
+       	{
+   			e.printStackTrace();
+   		}
     }
 
     protected void execute() 
     {
-    	if(Robot.isRecording)
-    	{
-        	try 
-        	{
-    			Robot.teleopRecorder.record();
-    		} 
-        	catch (IOException e) 
-        	{
-    			e.printStackTrace();
-    		}
-    	}
+    	try 
+	    {
+	       Robot.teleopRecorder.record();
+	    } 
+       	catch (IOException e) 
+	  	{
+  			e.printStackTrace();
+		}
     }
 
     protected boolean isFinished() 
@@ -52,22 +46,18 @@ public class RecordTeleop extends Command
 
     protected void end() 
     {
-    	if(Robot.isRecording)
-    	{
-        	try
-        	{
-    			Robot.teleopRecorder.endRecord();
-    		} 
-        	catch (IOException e)
-        	{
-    			e.printStackTrace();
-    		}
+        try
+        {
+    		Robot.teleopRecorder.endRecord();
+    	} 
+        catch (IOException e)
+        {
+    		e.printStackTrace();
     	}
     }
 
     protected void interrupted() 
     {
-    	Robot.isRecording = false;
     	end();
     }
 }

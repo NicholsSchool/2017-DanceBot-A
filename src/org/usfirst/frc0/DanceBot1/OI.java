@@ -14,6 +14,7 @@ public class OI
     public Joystick joystick2;
     
     public JoystickButton joystick0Button7;
+    public JoystickButton joystick0Button8;
     public JoystickButton joystick0Button10;
 
     public OI() 
@@ -24,6 +25,9 @@ public class OI
         
         joystick0Button7 = new JoystickButton(joystick0, 7);
         joystick0Button7.whenPressed(new RecordTeleop());
+        
+        joystick0Button8 = new JoystickButton(joystick0, 8);
+        joystick0Button8.whenPressed(new StopRecord());
         
         joystick0Button10 = new JoystickButton(joystick0, 10);
         joystick0Button10.whenPressed(new PlayTeleop());

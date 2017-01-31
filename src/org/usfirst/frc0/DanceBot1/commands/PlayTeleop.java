@@ -10,14 +10,14 @@ public class PlayTeleop extends Command
 {
 	public PlayTeleop()
 	{
-		requires(Robot.teleopRecorder);
+		requires(Robot.autoPlayer);
 	}
 	
     protected void initialize() 
     {
     	try
     	{
-			Robot.teleopRecorder.setupPlayback();
+			Robot.autoPlayer.setupPlayback();
 		} 
     	catch (FileNotFoundException e)
     	{
@@ -27,17 +27,17 @@ public class PlayTeleop extends Command
 
     protected void execute() 
     {
-    	Robot.teleopRecorder.play();
+    	Robot.autoPlayer.play();
     }
 
     protected boolean isFinished() 
     {
-        return !Robot.teleopRecorder.isPlaying();
+        return !Robot.autoPlayer.isPlaying();
     }
 
     protected void end() 
     {
-    	Robot.teleopRecorder.endPlayback();
+    	Robot.autoPlayer.endPlayback();
     }
 
     protected void interrupted() 

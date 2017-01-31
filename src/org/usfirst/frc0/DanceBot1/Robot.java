@@ -18,6 +18,7 @@ public class Robot extends IterativeRobot {
     public static LightRotater lightRotater;
     public static AutoSwitch AutoSwitch;
     public static TeleopRecorder teleopRecorder;
+    public static AutoPlayer autoPlayer;
     
     public static boolean isRecording;
 
@@ -31,6 +32,8 @@ public class Robot extends IterativeRobot {
         
         teleopRecorder = new TeleopRecorder();
         isRecording = false;
+        
+        autoPlayer = new AutoPlayer();
         
         oi = new OI();
 
@@ -69,7 +72,7 @@ public class Robot extends IterativeRobot {
        // SmartDashboard.putNumber("TestPot Value", RobotMap.testPot.get());
         SmartDashboard.putNumber("Current Dial", Robot.AutoSwitch.getDial());
         SmartDashboard.putBoolean("isRecording", isRecording);
-        SmartDashboard.putBoolean("isPlaying", Robot.teleopRecorder.isPlaying());
+        SmartDashboard.putBoolean("isPlaying", Robot.autoPlayer.isPlaying());
     }
 
     public void testPeriodic() 

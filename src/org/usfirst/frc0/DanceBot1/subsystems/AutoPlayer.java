@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import org.usfirst.frc0.DanceBot1.Robot;
 import org.usfirst.frc0.DanceBot1.RobotMap;
 
 import com.ctre.CANTalon;
@@ -26,9 +27,9 @@ public class AutoPlayer extends Subsystem
 	
 	long startTime;
 	
-	static final int autoNum = TeleopRecorder.autoNum;
+	//public static int autoNum = TeleopRecorder.autoNum;
 	
-	public static final String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
+	//public static String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
     
 	public void setupPlayback() throws FileNotFoundException
 	{
@@ -36,7 +37,7 @@ public class AutoPlayer extends Subsystem
 		
 		startTime = System.currentTimeMillis();
 		
-		scanner = new Scanner(new File(autoFile));
+		scanner = new Scanner(new File(Robot.autoFile));
 		// lets the scanner know how to get separate values
 		scanner.useDelimiter(",|\\n");
 		

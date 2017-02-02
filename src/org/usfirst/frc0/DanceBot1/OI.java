@@ -13,8 +13,10 @@ public class OI
     public Joystick joystick1;
     public Joystick joystick2;
     
+    public JoystickButton joystick0Button4;
+    public JoystickButton joystick0Button5;
+    public JoystickButton joystick0Button6;
     public JoystickButton joystick0Button7;
-    public JoystickButton joystick0Button8;
     public JoystickButton joystick0Button10;
 
     public OI() 
@@ -23,11 +25,17 @@ public class OI
         joystick1 = new Joystick(1);
         joystick2 = new Joystick(2);
         
-        joystick0Button7 = new JoystickButton(joystick0, 7);
-        joystick0Button7.whenPressed(new RecordTeleop());
+        joystick0Button4 = new JoystickButton(joystick0, 4);
+        joystick0Button4.whenPressed(new CycleAutoFileDown());
         
-        joystick0Button8 = new JoystickButton(joystick0, 8);
-        joystick0Button8.whenPressed(new StopRecord());
+        joystick0Button5 = new JoystickButton(joystick0, 5);
+        joystick0Button5.whenPressed(new CycleAutoFileUp());
+        
+        joystick0Button6 = new JoystickButton(joystick0, 6);
+        joystick0Button6.whenPressed(new RecordTeleop());
+        
+        joystick0Button7 = new JoystickButton(joystick0, 7);
+        joystick0Button7.whenPressed(new StopRecord());
         
         joystick0Button10 = new JoystickButton(joystick0, 10);
         joystick0Button10.whenPressed(new PlayTeleop());

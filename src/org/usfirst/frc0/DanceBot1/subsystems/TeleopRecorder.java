@@ -1,10 +1,7 @@
 package org.usfirst.frc0.DanceBot1.subsystems;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 import org.usfirst.frc0.DanceBot1.Robot;
 import org.usfirst.frc0.DanceBot1.RobotMap;
@@ -25,15 +22,11 @@ public class TeleopRecorder extends Subsystem
 	
 	long startTime;
 	
-	static final int autoNum = 1;
-	
-	public static final String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
-	
 	public void setupRecorder() throws IOException
 	{
 		startTime = System.currentTimeMillis();
 		
-		writer = new FileWriter(autoFile);
+		writer = new FileWriter(Robot.autoFile);
 	}
 	
 	public void record() throws IOException

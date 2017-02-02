@@ -21,6 +21,8 @@ public class Robot extends IterativeRobot {
     public static AutoPlayer autoPlayer;
     
     public static boolean isRecording;
+    public static int autoNum = 1;
+    public static String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
 
     public void robotInit()
     {
@@ -69,12 +71,14 @@ public class Robot extends IterativeRobot {
     {
         Scheduler.getInstance().run();
         
+        autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
+        
        // SmartDashboard.putNumber("TestPot Value", RobotMap.testPot.get());
         SmartDashboard.putNumber("Current Dial", Robot.AutoSwitch.getDial());
         SmartDashboard.putBoolean("isRecording", isRecording);
-        SmartDashboard.putString("Currently recording to:", TeleopRecorder.autoFile);
+        SmartDashboard.putString("Currently recording to:", autoFile);
         SmartDashboard.putBoolean("isPlaying", Robot.autoPlayer.isPlaying());
-        SmartDashboard.putString("Currently playing from:", AutoPlayer.autoFile);
+        SmartDashboard.putString("Currently playing from:", autoFile);
     }
 
     public void testPeriodic() 

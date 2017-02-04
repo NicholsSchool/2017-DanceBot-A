@@ -19,6 +19,7 @@ public class Robot extends IterativeRobot {
     public static AutoSwitch AutoSwitch;
     public static TeleopRecorder teleopRecorder;
     public static AutoPlayer autoPlayer;
+    public static int  Counter;
     
     public static boolean isRecording;
     public static int autoNum = 1;
@@ -36,6 +37,7 @@ public class Robot extends IterativeRobot {
         isRecording = false;
         
         autoPlayer = new AutoPlayer();
+        Counter = 0;
         
         oi = new OI();
 
@@ -79,6 +81,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putString("Currently recording to:", autoFile);
         SmartDashboard.putBoolean("isPlaying", Robot.autoPlayer.isPlaying());
         SmartDashboard.putString("Currently playing from:", autoFile);
+        SmartDashboard.putNumber("Playback Count:", Counter);
     }
 
     public void testPeriodic() 

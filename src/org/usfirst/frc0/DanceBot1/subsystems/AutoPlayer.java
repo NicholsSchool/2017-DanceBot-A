@@ -24,7 +24,7 @@ public class AutoPlayer extends Subsystem
 	boolean onTime;
 	double nextTimestamp;
 	boolean isPlaying;
-	
+
 	long startTime;
 	
 	//public static int autoNum = TeleopRecorder.autoNum;
@@ -42,6 +42,8 @@ public class AutoPlayer extends Subsystem
 		scanner.useDelimiter(",|\\n");
 		
 		onTime = true;
+
+		
 	}
 	
 	public void play()
@@ -58,7 +60,7 @@ public class AutoPlayer extends Subsystem
 			deltaTime = nextTimestamp - (System.currentTimeMillis() - startTime);
 			
 			// if the current run time is equal to the timestamp of the motor values, set the motor values
-			// this is so that the program doesn't set the values too fast
+			// this is so that the program doesn't set the values too fasts
 			if(deltaTime <= 0)
 			{
 				leftFrontMotor.set(scanner.nextDouble());
@@ -66,7 +68,8 @@ public class AutoPlayer extends Subsystem
 				rightFrontMotor.set(scanner.nextDouble());
 				rightRearMotor.set(scanner.nextDouble());
 				lightMotor.set(scanner.nextDouble());
-				
+		
+				Robot.Counter ++ ;
 				onTime = true;
 			}
 			else
@@ -79,6 +82,7 @@ public class AutoPlayer extends Subsystem
 		{
 			isPlaying = false;
 		}
+
 	}
 	
 	public void endPlayback()

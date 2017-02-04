@@ -61,7 +61,7 @@ public class AutoPlayer extends Subsystem
 			// this is so that the program doesn't set the values too fast
 			if(deltaTime <= 0)
 			{
-				leftFrontMotor.set(scanner.nextDouble());
+				leftFrontMotor.set(scanner.nextDouble()); 
 				leftRearMotor.set(scanner.nextDouble());
 				rightFrontMotor.set(scanner.nextDouble());
 				rightRearMotor.set(scanner.nextDouble());

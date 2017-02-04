@@ -23,6 +23,8 @@ public class Robot extends IterativeRobot {
     public static boolean isRecording;
     public static int autoNum = 1;
     public static String autoFile = new String("/home/lvuser/recordedAuto" + autoNum + ".csv");
+    
+    public static boolean testCommandCalled;
 
     public void robotInit()
     {
@@ -36,6 +38,8 @@ public class Robot extends IterativeRobot {
         isRecording = false;
         
         autoPlayer = new AutoPlayer();
+        
+        testCommandCalled = false;
         
         oi = new OI();
 
@@ -79,6 +83,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putString("Currently recording to:", autoFile);
         SmartDashboard.putBoolean("isPlaying", Robot.autoPlayer.isPlaying());
         SmartDashboard.putString("Currently playing from:", autoFile);
+        SmartDashboard.putBoolean("TESTCOMMANDCALLED", Robot.testCommandCalled);
     }
 
     public void testPeriodic() 

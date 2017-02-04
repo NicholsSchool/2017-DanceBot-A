@@ -12,11 +12,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class TeleopRecorder extends Subsystem
 {
-    private final CANTalon leftFrontMotor = RobotMap.driveTrainLeftFrontMotor;
+    /*private final CANTalon leftFrontMotor = RobotMap.driveTrainLeftFrontMotor;
     private final CANTalon leftRearMotor = RobotMap.driveTrainLeftRearMotor;
     private final CANTalon rightFrontMotor = RobotMap.driveTrainRightFrontMotor;
     private final CANTalon rightRearMotor = RobotMap.driveTrainRightRearMotor;
-    private final CANTalon lightMotor = RobotMap.lightRotaterMotor;
+    private final CANTalon lightMotor = RobotMap.lightRotaterMotor;*/
 	
 	FileWriter writer;
 	
@@ -36,11 +36,15 @@ public class TeleopRecorder extends Subsystem
 		{
 			writer.append("" + (System.currentTimeMillis() - startTime));
 			
-			writer.append("," + leftFrontMotor.get());
+			/*writer.append("," + leftFrontMotor.get());
 			writer.append("," + leftRearMotor.get());
 			writer.append("," + rightFrontMotor.get());
 			writer.append("," + rightRearMotor.get());
-			writer.append("," + lightMotor.get());
+			writer.append("," + lightMotor.get());*/
+			writer.append("," + Robot.oi.getJoystick0Y());
+			writer.append("," + Robot.oi.getJoystick0X());
+			writer.append("," + Robot.oi.getJoystick0Z());
+			writer.append("," + Robot.oi.getJoystick0Button11());
 			
 			writer.append("\n");
 		}

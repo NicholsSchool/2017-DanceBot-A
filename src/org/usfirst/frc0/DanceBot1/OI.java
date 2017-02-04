@@ -18,6 +18,7 @@ public class OI
     public JoystickButton joystick0Button6;
     public JoystickButton joystick0Button7;
     public JoystickButton joystick0Button10;
+    public JoystickButton joystick0Button11;
 
     public OI() 
     {
@@ -39,6 +40,9 @@ public class OI
         
         joystick0Button10 = new JoystickButton(joystick0, 10);
         joystick0Button10.whenPressed(new PlayTeleop());
+        
+        joystick0Button11 = new JoystickButton(joystick0, 11);
+        joystick0Button11.whenPressed(new TestCommand());
         
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("Tank Drive", new TankDrive());
@@ -78,6 +82,11 @@ public class OI
     public double getJoystick2()
     {
     	return joystick2.getY();
+    }
+    
+    public boolean getJoystick0Button11()
+    {
+    	return joystick0Button11.get();
     }
 }
 

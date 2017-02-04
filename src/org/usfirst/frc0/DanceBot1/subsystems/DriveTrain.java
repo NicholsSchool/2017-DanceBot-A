@@ -26,7 +26,7 @@ public class DriveTrain extends Subsystem
     	setDefaultCommand(new TankDrive());
     }
     
-    public void move(double leftAmount, double rightAmount)
+    public void move(double yAmount, double xAmount)
     {
     	
     	//To regulate the speed by the Pot value
@@ -38,7 +38,7 @@ public class DriveTrain extends Subsystem
     	
     	
     	// right motors are reversed but tankDrive automatically fixes it???
-    	robotDrive4.arcadeDrive(leftAmount, rightAmount);
+    	robotDrive4.arcadeDrive(yAmount, xAmount);
     	
     	// use for testing
     	//leftFrontMotor.set(leftAmount);
